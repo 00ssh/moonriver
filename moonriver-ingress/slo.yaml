@@ -1,8 +1,9 @@
 ---
-spec_version: "1.0"
+spec_version: "0.1.0"
 comparison:
   compare_with: "single_result"
-filter:
+  include_result_with_score: "pass"
+  aggregate_function: avg
 objectives:
   - sli: "controller_succes_rate"
     key_sli: false
