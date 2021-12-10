@@ -1,5 +1,5 @@
 ---
 spec_version: 0.1.0
 indicators:
-  controller_succes_rate: sum(rate(nginx_ingress_controller_requests{status!~"[4-5].*"}[5m])) /  sum(rate(nginx_ingress_controller_requests{}[5m]))
-  controller_response_time: sum(rate(nginx_ingress_controller_response_duration_seconds_bucket{le="0.5"}[5m])) by (job) / sum(rate(nginx_ingress_controller_response_duration_seconds_count[5m])) by (job)
+  error_rate: sum(rate(nginx_ingress_controller_requests{status!~"[4-5].*"}[5m])) / sum(rate(nginx_ingress_controller_requests{}[5m]))
+  throughput: sum(rate(nginx_ingress_controller_response_duration_seconds_bucket{le="0.5"}[5m])) by (job) / sum(rate(nginx_ingress_controller_response_duration_seconds_count[5m])) by (job)
